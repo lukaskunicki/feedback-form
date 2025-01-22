@@ -1,0 +1,11 @@
+# Config files
+prettier.config.js
+.eslintrc
+.stylelintrc
+
+# Build output
+build/
+node_modules/
+
+# WordPress files
+*.php 

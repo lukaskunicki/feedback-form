@@ -1,0 +1,158 @@
+@import "variables";
+
+.wp-block-feedback-form {
+	background-color: $feedback-block-background-color;
+	border-radius: $feedback-block-border-radius;
+	box-shadow: 0 0.125rem 0.25rem rgba($feedback-block-foreground-color, 0.1);
+	margin: 0 auto;
+	max-width: 37.5rem;
+	padding: 2rem;
+
+	.block-editor-block-list__layout & {
+		margin: $feedback-block-spacing;
+	}
+
+	&__title {
+		color: $feedback-block-foreground-color;
+		font-size: 1.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	&__form {
+		display: block;
+	}
+
+	&__field {
+		box-sizing: border-box;
+		margin-bottom: $feedback-block-spacing;
+		width: 100%;
+	}
+
+	&__label {
+		color: $feedback-block-foreground-color;
+		display: block;
+		font-weight: 500;
+		margin-bottom: $feedback-block-gap;
+	}
+
+	&__textarea {
+		box-sizing: border-box;
+		display: block;
+		max-height: 25rem;
+		min-height: 9.375rem;
+		overflow: auto;
+		position: relative;
+		resize: vertical;
+		width: 100%;
+		z-index: 1;
+
+		&:focus {
+			z-index: 2;
+		}
+	}
+
+	&__input,
+	&__textarea {
+		background-color: $feedback-block-background-color;
+		border: 0.0625rem solid $feedback-block-accent-2;
+		border-radius: calc($feedback-block-border-radius / 3);
+		box-sizing: border-box;
+		color: $feedback-block-foreground-color;
+		display: block;
+		font-size: 1rem;
+		margin: 0;
+		padding: 0.75rem;
+		transition: border-color 0.2s ease;
+		width: 100%;
+
+		&:focus {
+			border-color: $feedback-block-accent-1;
+			box-shadow: 0 0 0 0.0625rem $feedback-block-accent-1;
+			outline: none;
+		}
+
+		.block-editor-block-list__layout & {
+			opacity: 0.7;
+			pointer-events: none;
+		}
+	}
+
+	&__actions {
+		margin-top: $feedback-block-spacing;
+	}
+
+	&__submit {
+		background-color: $feedback-block-accent-1;
+		border: none;
+		border-radius: calc($feedback-block-border-radius / 3);
+		color: $feedback-block-background-color;
+		cursor: pointer;
+		font-size: 1rem;
+		padding: 0.75rem 1.5rem;
+		transition: background-color 0.2s ease;
+
+		&:hover {
+			background-color: $feedback-block-accent-1;
+		}
+
+		&:disabled {
+			background-color: $feedback-block-accent-2;
+			cursor: not-allowed;
+		}
+
+		.block-editor-block-list__layout & {
+			opacity: 0.7;
+			pointer-events: none;
+		}
+	}
+
+	&__error {
+		background-color: $feedback-block-error-light;
+		border: 0.0625rem solid rgba($feedback-block-error-dark, 0.2);
+		border-radius: calc($feedback-block-border-radius / 3);
+		color: $feedback-block-error-dark;
+		margin-top: $feedback-block-spacing;
+		padding: $feedback-block-spacing;
+	}
+
+	&__success {
+		background-color: $feedback-block-success-light;
+		border: 0.0625rem solid rgba($feedback-block-success-dark, 0.2);
+		border-radius: calc($feedback-block-border-radius / 3);
+		color: $feedback-block-success-dark;
+		padding: $feedback-block-spacing * 2;
+		text-align: center;
+
+		&-text {
+			font-size: 1.25rem;
+			margin: 0;
+		}
+	}
+}
+
+.wp-block[data-type="feedback-block/submission-form"] {
+	max-width: 37.5rem;
+}
+
+.feedback-detail-grid {
+	display: grid;
+	gap: $feedback-block-spacing;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.feedback-detail-item {
+	&.full-width {
+		grid-column: 1 / -1;
+	}
+
+	.message-content {
+		background-color: rgba($feedback-block-accent-2, 0.2);
+		border: 0.0625rem solid $feedback-block-accent-2;
+		border-radius: calc($feedback-block-border-radius / 3);
+		max-height: 18.75rem;
+		overflow-y: auto;
+		padding: $feedback-block-spacing;
+		white-space: pre-wrap;
+		word-break: break-word;
+	}
+}

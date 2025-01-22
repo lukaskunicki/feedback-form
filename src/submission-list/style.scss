@@ -1,0 +1,191 @@
+@import "variables";
+
+$feedback-block-spacing: 1rem;
+
+.wp-block-submission-list {
+	margin: 0 auto;
+	padding: $feedback-block-spacing;
+
+	&__unauthorized {
+		background-color: $feedback-block-error-background;
+		border: 0.0625rem solid $feedback-block-error-border;
+		border-radius: $feedback-block-border-radius;
+		color: $feedback-block-error-text;
+		padding: $feedback-block-spacing;
+		text-align: center;
+	}
+
+	&__container {
+		background: $feedback-block-background;
+		border-radius: $feedback-block-border-radius;
+		box-shadow: 0 0.125rem 0.25rem rgba($feedback-block-foreground, 0.1);
+		overflow: hidden;
+		width: 100%;
+	}
+
+	&__loading {
+		color: $feedback-block-text-muted;
+		padding: $feedback-block-spacing;
+		text-align: center;
+	}
+
+	&__header {
+		background-color: $feedback-block-hover;
+		border-bottom: 0.0625rem solid $feedback-block-border;
+		display: grid;
+		font-weight: 700;
+		gap: $feedback-block-gap;
+		grid-template-columns: 2fr 2fr 2fr 3fr;
+		padding: $feedback-block-spacing;
+	}
+
+	&__item {
+		border-bottom: 0.0625rem solid $feedback-block-border;
+		cursor: pointer;
+		display: grid;
+		gap: $feedback-block-gap;
+		grid-template-columns: 2fr 2fr 2fr 3fr;
+		padding: $feedback-block-spacing;
+		transition: background-color 0.2s;
+
+		&:hover {
+			background-color: $feedback-block-hover;
+		}
+
+		&--selected {
+			background-color: $feedback-block-selected;
+		}
+
+		span {
+			min-width: 0;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			word-break: break-word;
+		}
+	}
+
+	&__details {
+		background-color: $feedback-block-hover;
+		border-bottom: 0.0625rem solid $feedback-block-border;
+		padding: $feedback-block-spacing;
+	}
+
+	&__detail-row {
+		margin-bottom: $feedback-block-spacing;
+
+		> strong {
+			color: $feedback-block-text-dark;
+			display: block;
+			font-size: 1.1em;
+			margin-bottom: $feedback-block-spacing;
+		}
+	}
+
+	&__detail-grid {
+		background: $feedback-block-background;
+		border-radius: calc($feedback-block-border-radius / 3);
+		box-shadow: 0 0.0625rem 0.1875rem rgba($feedback-block-foreground, 0.05);
+		display: grid;
+		gap: $feedback-block-gap;
+		grid-template-columns: repeat(2, 1fr);
+		padding: $feedback-block-spacing;
+	}
+
+	&__detail-item {
+		min-width: 0;
+		word-break: break-word;
+
+		&--full-width {
+			grid-column: 1 / -1;
+		}
+
+		strong {
+			color: $feedback-block-text-muted;
+			display: block;
+			font-size: 0.9em;
+			margin-bottom: calc($feedback-block-gap / 2);
+		}
+	}
+
+	&__message-content {
+		background: $feedback-block-hover;
+		border-radius: calc($feedback-block-border-radius / 3);
+		line-height: 1.5;
+		overflow-wrap: break-word;
+		padding: $feedback-block-spacing;
+		white-space: pre-wrap;
+		word-break: break-word;
+	}
+
+	&__pagination {
+		background-color: $feedback-block-background;
+		display: flex;
+		gap: calc($feedback-block-gap / 2);
+		justify-content: center;
+		padding: $feedback-block-spacing;
+
+		&[hidden] {
+			display: none;
+		}
+	}
+
+	&__page-button {
+		background-color: $feedback-block-background;
+		border: 0.0625rem solid $feedback-block-border;
+		border-radius: calc($feedback-block-border-radius / 3);
+		cursor: pointer;
+		height: 2.5rem;
+		min-width: 2.5rem;
+		padding: 0 0.625rem;
+		transition: all 0.2s;
+
+		&:hover {
+			background-color: $feedback-block-hover;
+			border-color: $feedback-block-text-muted;
+		}
+
+		&--active {
+			background-color: $feedback-block-accent-1;
+			border-color: $feedback-block-accent-1;
+			color: $feedback-block-background;
+		}
+	}
+
+	&__loading-details {
+		background-color: rgba($feedback-block-accent-2, 0.1);
+		border-radius: calc($feedback-block-border-radius / 3);
+		font-style: italic;
+		margin-bottom: $feedback-block-spacing;
+		padding: $feedback-block-spacing;
+		text-align: center;
+
+		&::after {
+			animation: loading-dots 1.5s infinite;
+			content: ".";
+		}
+	}
+
+	&__empty {
+		background-color: $feedback-block-background;
+		border: 0.0625rem solid $feedback-block-border;
+		border-radius: $feedback-block-border-radius;
+		color: $feedback-block-text-muted;
+		padding: $feedback-block-spacing;
+		text-align: center;
+	}
+}
+
+@keyframes loading-dots {
+	0% {
+		content: ".";
+	}
+
+	33% {
+		content: "..";
+	}
+
+	66% {
+		content: "...";
+	}
+}

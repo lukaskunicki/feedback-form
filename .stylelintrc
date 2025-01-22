@@ -1,0 +1,62 @@
+{
+	"extends": ["stylelint-config-standard-scss"],
+	"plugins": ["stylelint-order", "stylelint-scss"],
+	"rules": {
+		"at-rule-empty-line-before": [
+			"always",
+			{
+				"except": ["blockless-after-same-name-blockless", "first-nested"],
+				"ignore": ["after-comment"]
+			}
+		],
+		"at-rule-no-unknown": null,
+		"scss/at-rule-no-unknown": true,
+		"block-no-empty": true,
+		"color-hex-length": "short",
+		"color-no-invalid-hex": true,
+		"comment-empty-line-before": [
+			"always",
+			{
+				"except": ["first-nested"],
+				"ignore": ["stylelint-commands"]
+			}
+		],
+		"declaration-block-no-duplicate-properties": true,
+		"declaration-block-no-shorthand-property-overrides": true,
+		"declaration-block-single-line-max-declarations": 1,
+		"declaration-no-important": true,
+		"font-family-no-duplicate-names": true,
+		"font-family-no-missing-generic-family-keyword": true,
+		"function-calc-no-unspaced-operator": true,
+		"function-linear-gradient-no-nonstandard-direction": true,
+		"keyframe-declaration-no-important": true,
+		"length-zero-no-unit": true,
+		"media-feature-name-no-unknown": true,
+		"no-descending-specificity": null,
+		"no-duplicate-at-import-rules": true,
+		"no-duplicate-selectors": true,
+		"no-empty-source": true,
+		"no-invalid-double-slash-comments": true,
+		"property-no-unknown": true,
+		"selector-pseudo-class-no-unknown": true,
+		"selector-pseudo-element-no-unknown": true,
+		"selector-type-no-unknown": true,
+		"string-no-newline": true,
+		"unit-no-unknown": true,
+		"order/order": [
+			"custom-properties",
+			"declarations"
+		],
+		"order/properties-alphabetical-order": true,
+		"scss/selector-no-redundant-nesting-selector": true,
+		"scss/no-duplicate-mixins": true,
+		"scss/dollar-variable-empty-line-before": [
+			"always",
+			{
+				"except": ["first-nested", "after-comment", "after-dollar-variable"],
+				"ignore": ["after-comment", "inside-single-line-block"]
+			}
+		],
+		"selector-class-pattern": "^[a-z]+(-[a-z]+)*(__[a-z]+(-[a-z]+)*)?(--[a-z]+(-[a-z]+)*)?$"
+	}
+} 

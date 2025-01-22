@@ -1,0 +1,39 @@
+{
+	"name": "feedback-block",
+	"version": "1.0.0",
+	"description": "Feedback form and submission list blocks for WordPress",
+	"author": "",
+	"license": "GPL-2.0-or-later",
+	"scripts": {
+		"build": "wp-scripts build --experimental-modules",
+		"start": "wp-scripts start --experimental-modules",
+		"lint:js": "wp-scripts lint-js",
+		"lint:css": "stylelint \"src/**/*.{css,scss}\"",
+		"lint:css:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
+		"format:js": "prettier --config ./prettier.config.js \"src/**/*.{js,jsx}\" --write --ignore-path .prettierignore",
+		"format:css": "prettier --config ./prettier.config.js \"src/**/*.{css,scss}\" --write --ignore-path .prettierignore",
+		"lint": "npm run lint:js && npm run lint:css",
+		"format": "npm run format:js && npm run format:css"
+	},
+	"files": [
+		"[^.]*"
+	],
+	"dependencies": {
+		"@wordpress/interactivity": "^5.4.0"
+	},
+	"devDependencies": {
+		"@wordpress/eslint-plugin": "^13.6.0",
+		"@wordpress/prettier-config": "^2.5.0",
+		"@wordpress/scripts": "^27.6.0",
+		"eslint": "^8.15.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-react": "^7.30.0",
+		"eslint-plugin-react-hooks": "^4.5.0",
+		"prettier": "^2.6.2",
+		"prettier-plugin-organize-imports": "^3.0.0",
+		"stylelint": "^15.11.0",
+		"stylelint-config-standard-scss": "^11.1.0",
+		"stylelint-order": "^6.0.3",
+		"stylelint-scss": "^5.3.1"
+	}
+}

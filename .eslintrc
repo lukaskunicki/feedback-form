@@ -1,0 +1,32 @@
+{
+    "root": true,
+    "extends": [
+        "plugin:@wordpress/eslint-plugin/recommended",
+        "prettier"
+    ],
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "parserOptions": {
+        "requireConfigFile": false,
+        "ecmaVersion": 2021,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "no-console": ["warn", { "allow": ["warn", "error"] }],
+        "no-unused-vars": "warn",
+        "no-nested-ternary": "error",
+        "no-multiple-empty-lines": ["error", { "max": 1 }],
+        "camelcase": ["error", { "properties": "never" }],
+        "consistent-return": "error",
+        "curly": ["error", "all"],
+        "eqeqeq": ["error", "always"],
+        "prefer-const": "error",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
+    }
+} 

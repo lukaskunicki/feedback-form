@@ -1,0 +1,14 @@
+{
+    "name": "feedback-block/feedback-block",
+    "description": "A WordPress plugin providing feedback form and submission list blocks",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "FeedbackBlock\\Includes\\": "includes"
+        }
+    },
+    "require": {
+        "php": ">=7.4"
+    }
+} 
